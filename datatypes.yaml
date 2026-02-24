@@ -1,0 +1,53 @@
+# String variables
+name: Suyog Gampawar
+fruit: "Grapes"
+colour: 'White'
+
+# How to write strings with multiple lines :
+bio: |
+  Hello my name is Suyog gampawar
+  I think I'm a very nice dude
+
+# How to write a single line in multiple lines (Think of it as if there is a very long line)
+message: >
+  This
+  all is
+  in one line
+
+# YAML is a type of language which auto detects the data type like :
+number: 67
+float: 45.89
+booleanValue: No # In YAML the boolean value is n, N, false, False, FALSE
+# Same for true => yes, y, Y, true, True, TRUE
+
+
+# But if you do want to specify the data type for any reason it might be : 
+
+# Integers
+
+number: !!int 67
+PostitiveNum: !!int 56
+NegativeNum: !!int -98
+commaValue: !!int +540_000 # 540,000
+
+# Float
+Marks: !!float 91.59
+
+# How to show infinity
+Infinity: !!float .inf
+
+# Not a number
+not a num: .nan
+
+# For Boolean
+booleanValue: !!bool No
+
+# For string
+StringVal: !!str This is how you write string
+
+# null
+surname: !!null Null # or null, NULL, ~
+~: Ts is a null key
+
+# Exponential nums
+ExpoNum: 0.256E98
