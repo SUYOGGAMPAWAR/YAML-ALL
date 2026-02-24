@@ -1,0 +1,20 @@
+"apple" : "This is a fruit"
+1 : "This is my role number"
+
+---
+
+# Lists
+
+- apple
+- banana
+- Apple
+- orange
+
+---
+
+cities :
+  - Nagpur
+  - Mumbai
+  - New Delhi
+  - NYC
+...
