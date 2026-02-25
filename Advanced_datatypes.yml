@@ -1,0 +1,20 @@
+student: ||seq # This is showing that it is a sequence type data
+  - marks
+  - name
+  - roll_no
+
+# This above can also be written like this
+
+
+Student: [Marks, Name, Roll_no]
+
+# Sparse seq : Some of the keys in the seq will be empty
+
+Sparse seq:
+  - Yooooo
+  - What_up
+  - 
+  - Null
+  - Hey
+
+# Nested seq
