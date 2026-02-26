@@ -18,3 +18,71 @@ Sparse seq:
   - Hey
 
 # Nested seq
+- Cars
+ - BMW
+ - Lambo
+ - TATA
+- Names
+ - Suyog
+ - Saurabh
+ - Sushil
+
+# Key: value pairs are called maps
+# Represented by
+!!map
+
+# Nested maps: map inside of a map
+Name: Suyog Gampawar
+role: 
+ Age: 21
+ job: Student
+
+# This can also be written as
+Name: Suyog Gampawar
+role: { Age: 21, job: Student}
+
+# pairs: keys may have duplicate values
+# !!pairs
+
+
+pair example: !!pairs
+  - job: student
+  - job: teacher
+# This will be an array of hashtables
+
+# Same as
+pair example: !!pairs [ job: student, job: teacher]
+
+# !!set will allow you to have unique values
+names: !!set
+  ? Suyog
+  ? Saurabh
+  ? Sushil
+# '?' this means you cannot have more than one string or in this case more than one name
+
+# Now if you want an entire sequence as a value then
+# Use dictionary -> !!omap
+students: !!omap
+ - Suyog: 
+   - name: Suyog Gampawar
+   - Weight: '72kg'
+   - Height: '5.7ft'
+
+# Reusing some properties with the help of anchors
+likings: &likes
+ fav fruit: Mangoes
+ dislikes: grapes
+
+# So if this above info is repetitive in many of the sequences that you're gonna write then just anchor it and rather copy pasting it judt do this: 
+person1: 
+ Name: Suyog Gampawar
+ <<: *likes
+# Now that likings info will be copied as it is
+# Now ik this looks familiar So yeah this works similar to a pointer where we use both '&' and '*'
+
+# You can override some value too like: 
+person2: 
+ Name: Suyog Gampawar
+ <<: *likes
+ dislikes: berries
+# So now the value in og dislikes will be overriden by the latest given value of 'berries'
